@@ -31,19 +31,22 @@
                                 <li class="blogsc-item">
                                     <a href="<?php the_permalink() ?>"><h1
                                                 class="titulo-bc-item"><?php the_title() ?></h1></a>
-                                    <div class="info-blogc-public">Publicado em: 
-                                         <?php echo ucfirst(get_the_date('l, d \d\e F \d\e Y   \à\s H\hi')) ?>
+                                   <div class="w-col w-col-12">
+					   <div class="w-col w-col-6">
+					 <div class="info-blogc-public"><i class="fa fa-clock-o" aria-hidden="true"></i> publicado em  
+                                         <?php echo ucfirst(get_the_date('d \d\e F \d\e Y   \à\s H\hi')) ?>
                                         <br/>
-                                        Por:
                                         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>">
-                                            <?php echo the_author_meta('display_name'); ?>
-                                        </a>
-                                    </div>
+                                            <i class="fa fa-user-o" aria-hidden="true"></i> <?php echo the_author_meta('display_name'); ?>
+                                        </a>						   
+					   </div></div><div class="w-col w-col-6">	
+<?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:right"]') ?>
+                                    </div> </div>			
                                     <img class="img-blogs-colunas-item"
                                          src="<?php echo $image[url] ?>">
                                     <div class="p-blogs-colunas">
                                         <?php the_excerpt(); ?>
-                                        <a href="<?php the_permalink() ?>" class="bt-leia-mais">Leia mais</a>
+                                        <a href="<?php the_permalink() ?>" class="bt-leia-mais">Ler mais</a>
                                     </div>
                                     <div class="tag-blog-info">
                                         <?php
@@ -55,13 +58,10 @@
                                             }
                                             echo '</span>';
                                         }
-                                        ?>
+                                        ?><br /><br />
                                     </div>
 
-                                    <!--social-->
-                                    <?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:left"]') ?>
-                                    <img src="<?php echo get_template_directory_uri() ?>/images/redes_soc.png"
-                                         style="clear: both; height: 40px; margin: 6px 0 0 4px"><br><br>
+                                
                                 </li>
 
                                 <?php

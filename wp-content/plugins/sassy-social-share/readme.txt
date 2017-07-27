@@ -4,7 +4,7 @@ Donate link: https://www.heateor.com/donate/?action=Sassy+Social+Share
 Tags: social share, social sharing, social media share, share facebook, facebook social share, wordpress social share, share buttons, social share buttons, facebook like, twitter tweet, google +1, google plus share
 Requires at least: 2.5.0
 Tested up to: 4.8
-Stable tag: 3.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 
 Slickest, Simplest and Optimized Share buttons. Facebook, Twitter, Google+, Pinterest, WhatsApp and over 100 more.
@@ -17,11 +17,18 @@ This is the Simplest and Smoothest Social Sharing plugin with optimized and grea
 
 **Note:** Plugin will not work on local server. You should have an online website for the plugin to function properly.
 
-**Available in English, <a target="_blank" href="https://fr.wordpress.org/plugins/sassy-social-share/">French</a>
+**Available in English, <a target="_blank" href="https://fr.wordpress.org/plugins/sassy-social-share/">French</a>, <a target="_blank" href="https://pl.wordpress.org/plugins/sassy-social-share/">Polish</a>
 
 = Feature list =
 * Around **100 Social Sharing/Bookmarking** services
+* Share counts are supported for Facebook, Linkedin, Twitter, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte
 * FREE **Icon Customization** options
+* Options to specify sharing icon shape - Square, Round and Rectangular
+* Options to specify sharing icon size - minimum 16 pixels, no upper limit
+* Options to specify sharing icon backround color and logo color
+* Share counter customization options
+* Enable share count cache with option to control cache refresh time-frame
+* Enable/Disable vertical/floating sharing interface on mobile device
 * **Url Shortening Service** integration
 * **Standard and Floating** layout for Social Share icons
 * **Customizable Target Url** for Social Sharing
@@ -112,6 +119,12 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 4. **Universal Sharing Popup**: Universal Sharing popup having all the supported sharing and bookmarking services
 
 == Changelog ==
+= 3.1.2 =
+* Google Plus share counts are no longer supported, as the official API no longer serves the share count
+
+= 3.1.1 =
+* [Improvement] Social Share dialogue was being opened in new tab instead of the popup window, in the latest version of Google Chrome browser
+
 = 3.1 =
 * [Bugfix] Share counts were being cached even when "Refresh Share Count cache every" option (in "Miscellaneous" section) was kept blank
 
@@ -415,3 +428,9 @@ Yes, we can help you with it. Just drop an email at support[at]heateor[dot]com
 
 = 3.1 =
 * [Bugfix] Share counts were being cached even when "Refresh Share Count cache every" option (in "Miscellaneous" section) was kept blank
+
+= 3.1.1 =
+* [Improvement] Social Share dialogue was being opened in new tab instead of the popup window, in the latest version of Google Chrome browser
+
+= 3.1.2 =
+* Google Plus share counts are no longer supported, as the official API no longer serves the share count

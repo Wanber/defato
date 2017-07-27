@@ -1018,7 +1018,7 @@ defined( 'ABSPATH' ) or die("Cheating........Uh!!");
 							<td>
 							<input id="heateor_sss_counts" name="heateor_sss[horizontal_counts]" type="checkbox" <?php echo isset( $options['horizontal_counts'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<br/>
-							<span class="heateor_sss_help_content" style="display:block"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, GooglePlus, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'sassy-social-share' ) ?></span>
+							<span class="heateor_sss_help_content" style="display:block"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'sassy-social-share' ) ?></span>
 							</td>
 						</tr>
 						
@@ -1462,7 +1462,7 @@ defined( 'ABSPATH' ) or die("Cheating........Uh!!");
 							<td>
 							<input id="heateor_sss_vertical_counts" name="heateor_sss[vertical_counts]" type="checkbox" <?php echo isset( $options['vertical_counts'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<br/>
-							<span class="heateor_sss_help_content" style="display:block"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, GooglePlus, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'sassy-social-share' ) ?></span>
+							<span class="heateor_sss_help_content" style="display:block"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'sassy-social-share' ) ?></span>
 							</td>
 						</tr>
 						

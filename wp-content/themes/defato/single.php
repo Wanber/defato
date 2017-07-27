@@ -8,6 +8,7 @@
     $ID = get_the_ID();
     $post = get_post($ID);
     $thumb = get_post_thumbnail_id();
+    $thumb_meta = wp_get_attachment_metadata($thumb);
     $image = vt_resize($thumb, '', 620, 340, true);
     $image[url] .= '?w=620&h=340';
     $editorial = get_child_cat(get_the_category(), get_cat_ID('editoriais'));
@@ -60,20 +61,17 @@
                     <div class="w-row">
                         <div class="w-col w-col-6">
                             <div class="box-autor-news-page">
-                                <span class="box-autor-news-page-titulo">Por:
+                                <span class="box-autor-news-page-titulo"><i class="fa fa-user-o" aria-hidden="true"></i>  
                                     <?php $author_id = $post->post_author; ?>
                                     <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>">
                                         <?php echo the_author_meta('display_name', $author_id); ?>
                                     </a>
                                 </span>
-                                <b class="box-autor-news-page-data">postado
-                                    em: <?php echo get_the_date('j \d\e F \d\e Y') ?></b>
+                                <b class="box-autor-news-page-data"><i class="fa fa-clock-o" aria-hidden="true"></i>   publicado em <?php echo ucfirst(get_the_date('d \d\e F \d\e Y   \à\s H\hi')) ?></b>
                             </div>
                         </div>
                         <div class="w-col w-col-6">
-                            <div class="shared-page-noticias w-clearfix" style="text-align: right">
-                                <img src="<?php echo get_template_directory_uri() ?>/images/redes_soc.png"
-                                     style="float: right; height: 40px; margin: 6px 0 0 4px">
+                            <div class="shared-page-noticias w-clearfix" style="text-align: right">  
                                 <?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:right"]') ?>
                                 <br><br>
                             </div>
@@ -82,6 +80,9 @@
                     <div class="box-conteudo-noticia">
                         <img class="image-27"
                              src="<?php echo $image[url] ?>">
+			    
+			    <!--legenda-->
+			    <code><?php echo $thumb_meta['image_meta']['caption'] ?></code>
 
                         <div class="texto-conteudo-page-news">
 
@@ -93,8 +94,8 @@
                                 <?php $hora_termino = substr($post->FinishTime, 0, 5) . 'h'; ?>
 
                                 <h1>Detalhes do evento</h1>
-                                <b>Iníco:</b> <?php echo ucfirst(strftime('%A, %d de %B de %G', $data_inicio)) ?> às <?php echo $hora_inicio ?><br/>
-                                <b>Término:</b> <?php echo ucfirst(strftime('%A, %d de %B de %G', $data_termino)) ?> às <?php echo $hora_termino ?><br/>
+                                <b>Iníco:</b> <?php echo utf8_encode(ucfirst(strftime('%A, %d de %B de %G', $data_inicio))) ?> às <?php echo $hora_inicio ?><br/>
+                                <b>Término:</b> <?php echo utf8_encode(ucfirst(strftime('%A, %d de %B de %G', $data_termino))) ?> às <?php echo $hora_termino ?><br/>
                                 <b>Cidade:</b> <?php echo eo_get_venue_address()[city] ?><br/>
                                 <b>Local:</b> <?php echo eo_get_venue_name() ?><br/>
                                 <b>Endereço:</b> <?php echo eo_get_venue_address()[address] ?><br/><br/>

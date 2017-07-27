@@ -4,27 +4,17 @@
 $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) :
     get_userdata(get_query_var('author'));
 ?>
-
-<div class="sec-banner-home-3">
-    <div class="box-banner-home">
-        <div class="w-container">
-            <div class="banner-home-2">
-                <img class="image-31" sizes="90vw"
-                     src="<?php echo get_template_directory_uri() ?>/images/banner-3.png"
-                     srcset="<?php echo get_template_directory_uri() ?>/images/banner-3-p-500.png 500w, <?php echo get_template_directory_uri() ?>/images/banner-3.png 970w">
-            </div>
-        </div>
-    </div>
-</div>
 <div class="sec-page">
-    <h1 class="titulo-blog-coluna-page">
+    <h1 class="titulo-blog-coluna-page"><div class="w-container">
+	    
+	    
         <a class="titulo-blog-coluna-page"
            style="border: none"
            href="<?php echo get_permalink(get_page_by_title('Blogs/Colunas')) ?>">
             BLOGS E COLUNAS
-        </a> /
+        </a> 
         <span class="titulo-blogc-span"> <?php echo $curauth->display_name ?></span>
-    </h1>
+    </h1></div>
     <div class="w-container">
         <div class="w-row">
             <div class="box-blog-lis w-col w-col-8">
@@ -50,12 +40,19 @@ $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('a
                             <li class="blogsc-item">
                                 <h1 onclick="link('<?php the_permalink() ?>')"
                                     class="titulo-bc-item cursor-pointer"><?php the_title() ?></h1>
-                                <div class="info-blogc-public"><?php echo ucfirst(get_the_date('l, d \d\e F \d\e Y   \à\s H\hi')) ?></div>
+                                <div class="w-col w-col-12">
+					   <div class="w-col w-col-6">
+					 <div class="info-blogc-public"><i class="fa fa-clock-o" aria-hidden="true"></i> publicado em  
+                                         <?php echo ucfirst(get_the_date('d \d\e F \d\e Y   \à\s H\hi')) ?>
+                                        <br/>					   
+					   </div></div><div class="w-col w-col-6">	
+<?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:right"]') ?>
+                                    </div> </div>			
                                 <img class="img-blogs-colunas-item"
                                      src="<?php echo $image[url] ?>">
                                 <div class="p-blogs-colunas">
                                     <?php the_excerpt(); ?>
-                                    <a href="<?php the_permalink() ?>" class="text-span">continue lendo...</a>
+                                    <a href="<?php the_permalink() ?>" class="bt-leia-mais">Ler mais</a>
                                 </div>
                                 <div class="tag-blog-info">
                                     <?php
@@ -67,13 +64,9 @@ $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('a
                                         }
                                         echo '</span>';
                                     }
-                                    ?>
+                                    ?><br /><br />
                                 </div>
 
-                                <!--social-->
-                                <?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:left"]') ?>
-                                <img src="<?php echo get_template_directory_uri() ?>/images/redes_soc.png"
-                                     style="clear: both; height: 40px; margin: 6px 0 0 4px"><br><br>
                             </li>
 
                             <?php

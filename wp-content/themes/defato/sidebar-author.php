@@ -2,23 +2,22 @@
 $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) :
     get_userdata(get_query_var('author'));
 ?>
-
-<div class="banner-home-1">
-    <div class="box-sombra-banner">
-        <img class="image-3"
-             src="<?php echo get_template_directory_uri() ?>/images/banner.png">
+    <div class="foto-autor-pagina">
+        <?php echo get_avatar($curauth->ID, 100, '', '', array('class' => '')) ?>
+	    <h3 class="nome-autor-page"></h3>
+        <div style="text-align: justify"><?php echo get_the_author_meta('description', $curauth->ID) ?></div>
     </div>
 
     <div class="pesquisa-blog">
     <?php get_search_form(); ?>
 </div>
 
-    <div class="foto-autor-pagina">
-        <?php echo get_avatar($curauth->ID, 100, '', '', array('class' => '')) ?>
-        <h3 class="nome-autor-page"><?php echo $curauth->display_name ?></h3>
-        <div style="text-align: justify"><?php echo get_the_author_meta('description', $curauth->ID) ?></div>
-    </div>
 
+<div class="banner-home-1">
+    <div class="box-sombra-banner">
+        <img class="image-3"
+             src="<?php echo get_template_directory_uri() ?>/images/banner.png">
+    </div>
 
     <div class="box-laste-news">
         <h3 class="titulo-widget-last-news" style="color: #FF0F0F; border-color: #FF0F0F">

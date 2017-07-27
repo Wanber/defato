@@ -120,7 +120,7 @@ class Sassy_Social_Share_Public {
 					$inline_script .= ! isset( $this->options['vertical_counter_position'] ) || in_array( $this->options['vertical_counter_position'], array( 'inner_top', 'inner_bottom' ) ) ? 'var heateorSssReduceVerticalSvgHeight = true;' : '';
 				}
 				$inline_script .= 'var heateorSssUrlCountFetched = [], heateorSssSharesText = \''. htmlspecialchars(__('Shares', 'sassy-social-share'), ENT_QUOTES) .'\', heateorSssShareText = \''. htmlspecialchars(__('Share', 'sassy-social-share'), ENT_QUOTES) .'\';';
-				$inline_script .= 'function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes")}';
+				$inline_script .= 'function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}';
 				if ( $this->facebook_like_recommend_enabled() || $this->facebook_share_enabled() ) {
 					$inline_script .= 'function heateorSssInitiateFB() {FB.init({appId:"",channelUrl:"",status:!0,cookie:!0,xfbml:!0,version:"v2.5"})}window.fbAsyncInit=function() {heateorSssInitiateFB(),' . ( defined( 'HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION' ) && $this->facebook_like_recommend_enabled() ? 1 : 0 ) . '&&(FB.Event.subscribe("edge.create",function(e) {heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"")}),FB.Event.subscribe("edge.remove",function(e) {heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"","Minus point(s) for undoing Facebook like-recommend")}) ),'. ( defined( 'HEATEOR_SHARING_GOOGLE_ANALYTICS_VERSION' ) ? 1 : 0 ) .'&&(FB.Event.subscribe("edge.create",function(e) {heateorSsgaSocialPluginsTracking("Facebook","Like",e?e:"")}),FB.Event.subscribe("edge.remove",function(e) {heateorSsgaSocialPluginsTracking("Facebook","Unlike",e?e:"")}) )},function(e) {var n,i="facebook-jssdk",o=e.getElementsByTagName("script")[0];e.getElementById(i)||(n=e.createElement("script"),n.id=i,n.async=!0,n.src="//connect.facebook.net/'. ( $this->options['language'] ? $this->options['language'] : 'en_US' ) .'/sdk.js",o.parentNode.insertBefore(n,o) )}(document);';
 				}
@@ -1542,9 +1542,6 @@ class Sassy_Social_Share_Public {
 						case 'stumbleupon':
 							$url = 'http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' . $target_url;
 							break;
-						case 'google_plus':
-							$url = 'http://share.yandex.ru/gpp.xml?url=' . $target_url;
-							break;
 						case 'vkontakte':
 							$url = 'https://vk.com/share.php?act=count&url=' . $target_url;
 							break;
@@ -1611,13 +1608,6 @@ class Sassy_Social_Share_Public {
 									$share_count_transient['stumbleupon'] = $body -> result -> views;
 								} else {
 									$share_count_transient['stumbleupon'] = 0;
-								}
-								break;
-							case 'google_plus':
-								if ( ! empty( $body ) ) {
-									$share_count_transient['google_plus'] = (int) str_replace( '"', '', $body );
-								} else {
-									$share_count_transient['google_plus'] = 0;
 								}
 								break;
 							case 'vkontakte':

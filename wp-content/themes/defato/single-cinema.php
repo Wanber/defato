@@ -37,8 +37,6 @@
                         </div>
                         <div class="w-col w-col-6">
                             <div class="shared-page-noticias w-clearfix" style="text-align: right">
-                                <img src="<?php echo get_template_directory_uri() ?>/images/redes_soc.png"
-                                     style="float: right; height: 40px; margin: 6px 0 0 4px">
                                 <?php echo do_shortcode('[Sassy_Social_Share style="margin: 5px 0 15px 0; float:right"]') ?>
                                 <br><br>
                             </div>

@@ -8,14 +8,14 @@
 
                         <!--destaque - slider-->
                         <div class="slider w-slider">
-                            <?php echo do_shortcode('[recent_post_slider design="design-3"]'); ?>
+                            <?php echo do_shortcode('[recent_post_slider design="design-3" hide_category="50,49"]'); ?>
                         </div>
 
                         <!--destaques-->
                         <div class="w-row">
                             <?php
                             $the_query = new WP_Query(array(
-                                'category_name' => 'destaque',
+                                'category_name' => 'destaque-noticias',
                                 'posts_per_page' => 2
                             ));
 				
@@ -29,18 +29,18 @@
                                 ?>
 				
 			
-				<!--loop-->
+				<!--loop--> 
                                 <div class="news-left-1 w-col w-col-6">
 			    		<a class="category-link" style="position:absolute; top:25px; background:<?php echo $rl_category_color ?>"
 					   href="<?php echo get_category_link($editorial->cat_ID) ?>">
 					    <?php echo $editorial->cat_name ?>
 					</a>
-                                    <img class="news-left-img"
+                                    <a href="<?php the_permalink() ?>"><img class="news-left-img"
                                          src="<?php echo $image[url]; ?>"
                                          width="<?php echo $image[width]; ?>"
-                                         height="<?php echo $image[height]; ?>"/>
+					 height="<?php echo $image[height]; ?>"/></a>
                                     <a href="<?php the_permalink() ?>" class="news-left-title"><?php echo get_the_title(); ?></a>
-                                </div>
+				</div>
 			
 			
                                 <?php
@@ -51,7 +51,7 @@
                         <!--tv defato-->
                         <?php
                         $the_query = new WP_Query(array(
-                            'category_name' => 'tv-defato',
+                            'category_name' => 'destaque-tv-defato',
                             'posts_per_page' => 1
                         ));
                         while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -815,7 +815,10 @@ wp_reset_postdata();
     <div class="sec-recomendados">
         <div class="w-container">
             <h3 class="titulo-recomendados-home">RECOMENDADOS PRA VOCÊ</h3>
-            <div class="w-row">
+            <div class="w-row"> 
+		    
+		    <!----------COLAR CODIGO AQUI--------->
+		    
             </div>
         </div>
     </div>

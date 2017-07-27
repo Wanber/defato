@@ -123,14 +123,7 @@ class Sassy_Social_Share_Shortcodes {
 		$html .= $this->public_class_object->prepare_sharing_html( $short_url ? $short_url : $target_url, $type == 'standard' ? 'horizontal' : 'vertical', $count, $total_shares == 'ON' ? 1 : 0 );
 		$html .= '</div>';
 		if ( ( $count || $total_shares == 'ON' )  && $cached_share_count === false ) {
-			$html .= '<script>heateorSssLoadEvent(
-		function() {
-			// sharing counts
-			heateorSssCallAjax(function() {
-				heateorSssGetSharingCounts();
-			});
-		}
-	);</script>';
+			$html .= '<script>heateorSssLoadEvent(function(){heateorSssCallAjax(function(){heateorSssGetSharingCounts();});});</script>';
 		}
 		return $html;
 	}

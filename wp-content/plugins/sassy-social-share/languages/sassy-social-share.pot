@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sassy Social Share\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-24 14:17+0530\n"
-"PO-Revision-Date: 2017-06-24 14:17+0530\n"
+"POT-Creation-Date: 2017-07-24 18:41+0530\n"
+"PO-Revision-Date: 2017-07-24 18:41+0530\n"
 "Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
 "Language-Team: Heateor <hello@heateor.com>\n"
 "Language: en_IN\n"
@@ -542,8 +542,8 @@ msgstr ""
 #: ../admin/partials/sassy-social-share-options-page.php:1021
 #: ../admin/partials/sassy-social-share-options-page.php:1465
 msgid ""
-"Share counts are supported for Facebook, Twitter, Linkedin, GooglePlus, "
-"Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte"
+"Share counts are supported for Facebook, Twitter, Linkedin, Buffer, Reddit, "
+"Pinterest, Stumbleupon and Vkontakte"
 msgstr ""
 
 #: ../admin/partials/sassy-social-share-options-page.php:1028
@@ -1199,7 +1199,7 @@ msgid "Archives"
 msgstr ""
 
 #: ../public/class-sassy-social-share-public.php:1458
-#: ../public/class-sassy-social-share-public.php:1674
+#: ../public/class-sassy-social-share-public.php:1664
 msgid "Invalid request"
 msgstr ""
 
